@@ -13,11 +13,12 @@ image_topic: image_raw
 # choose which device to enter by entering its serial number here
 # if you dont know it, run this node once and all serial nodes should be printed out
 selectedDevice: "0000000000"
+  #selectedDevice: "78D004272C39"
 
 # configure your desired image size
 # needs to be divisble by 8 and smaller than your imager size (Max Width, Max Height)
-ImageHeight: 320
-ImageWidth: 1088
+ImageHeight: 2048
+ImageWidth: 2448
 
 # Pixelformat
 # In IDS Implemented: ["Mono8", "Mono10", "Mono12", "Mono10p", "Mono12p", "BayerRG8", "BayerRG10", "BayerRG12", "BayerRG10p", "BayerRG12p", "RGB8", "RGB10p32", "BGR8", "BGR10p32"]

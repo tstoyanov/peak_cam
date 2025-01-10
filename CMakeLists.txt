@@ -23,15 +23,21 @@ include_directories(
   ${CMAKE_CURRENT_SOURCE_DIR}/include
   ${IDS_PEAK_INCLUDE_DIR}
   ${IDS_PEAK_IPL_INCLUDE_DIR}
+  ${ids_peak_ipl_INCLUDES}
+  ${ids_peak_INCLUDES}
 )
 
 ament_auto_add_library(${PROJECT_NAME} SHARED
   src/peak_cam_node.cpp
 )
 
+#${ids_peak_ipl_LIBS}
+#${ids_peak_LIBS}
+
 target_link_libraries(${PROJECT_NAME}
   ${IDS_PEAK_LIBRARIES}
   ${IDS_PEAK_IPL_LIBRARIES}
+  ids_peak ids_peak_ipl
 )
 
 
@@ -41,6 +47,10 @@ rclcpp_components_register_node(${PROJECT_NAME}
   PLUGIN "peak_cam::PeakCamNode"
   EXECUTABLE peak_cam_node
 )
+
+#Peak magic
+ids_peak_deploy(${PROJECT_NAME})
+ids_peak_ipl_deploy(${PROJECT_NAME})
 
 install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/launch
   DESTINATION ${CMAKE_INSTALL_PREFIX}/share/${PROJECT_NAME}

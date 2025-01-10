@@ -7,15 +7,16 @@
 # and modify acquisition_parameters.hpp and setDeviceParameters() function in peak_cam class
 /**:
   ros__parameters:
-    frame_id: camera_front
+    frame_id: peak_cam
     image_topic: image_raw
     
     # choose which device to enter 
     # first device at "0" by default
-    selectedDevice: "4103432590"
+    selectedDevice: "4103909267"
+    #selectedDevice: "0"
     
-    ImageHeight: 320
-    ImageWidth: 1088
+    ImageHeight: 1560
+    ImageWidth: 1848
     
     # If UseOffset is false, image will be centered down middle depending on image height and width
     # If UseOffset is true, OffsetWidth and OffsetHeigth are used to offset configured image height and width
@@ -35,7 +36,7 @@
     
     # AcquisitionFrameRate in Hz
     # WATCH OUT when AcquisitionFrameRate is too high there might be some latency. Check "rostopic hz /cameratopic"
-    AcquisitionFrameRate: 10
+    AcquisitionFrameRate: 5
     
     # Gamma
     # Range [0.3, ..., 3.0]
